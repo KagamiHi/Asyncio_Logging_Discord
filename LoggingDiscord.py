@@ -42,7 +42,7 @@ async def start_discord_connect():
             }
         }
         await send_json_request(ws,payload)
-        loop.run_until_complete(await receiver_discord_connection (ws, bot, telegram_user_id))
+        loop.run_until_complete(await receiver_discord_connection (ws))
         
 async def receiver_discord_connection (ws):
     while True:
