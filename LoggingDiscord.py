@@ -21,7 +21,7 @@ async def heartbeat(intercal, ws):
         await send_json_request(ws, heartbeatJSON)
         print ("Heartbeat sent")
 
-async def start_discord_connect(bot, telegram_user_id):
+async def start_discord_connect():
     async with websockets.connect('wss://gateway.discord.gg/?v=6&encording=json') as ws:
         event = await receive_json_response(ws)
         heartbeat_interval = event['d']['heartbeat_interval'] / 1000
@@ -77,3 +77,6 @@ async def translate_event_to_message_info_list(message_event):
     discord_event_info_list[4] = content
     discord_event_info_list[5] = author_discord_id
     return discord_event_info_list
+
+    if __name__ == "__main__":               
+        asyncio.run(start_discord_connect()) 
