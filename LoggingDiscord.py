@@ -78,5 +78,6 @@ async def translate_event_to_message_info_list(message_event):
     discord_event_info_list[5] = author_discord_id
     return discord_event_info_list
 
-    if __name__ == "__main__":               
-        asyncio.run(start_discord_connect()) 
+
+if __name__ == "__main__":               
+    asyncio.run(start_discord_connect()) 
